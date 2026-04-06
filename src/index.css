@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #0F4184;
+    --color-primary-light: #1a5aad;
+    --color-bg: #f8f9fa;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-text: #1a202c;
+    --color-text-muted: #718096;
+    --color-income: #16a34a;
+    --color-expense: #dc2626;
+  }
+
+  .dark {
+    --color-bg: #0f172a;
+    --color-surface: #1e293b;
+    --color-border: #334155;
+    --color-text: #f1f5f9;
+    --color-text-muted: #94a3b8;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s, color 0.2s;
+  }
+}
+
+@layer components {
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    padding: 1.25rem;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.45rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.15s;
+  }
+  .btn-primary:hover { background-color: var(--color-primary-light); }
+
+  .btn-ghost {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    padding: 0.45rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+  .btn-ghost:hover { background-color: var(--color-border); }
+
+  .badge-income {
+    background-color: #dcfce7;
+    color: #15803d;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .badge-expense {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .dark .badge-income {
+    background-color: rgba(22,163,74,0.2);
+    color: #4ade80;
+  }
+
+  .dark .badge-expense {
+    background-color: rgba(220,38,38,0.2);
+    color: #f87171;
+  }
+
+  .input-field {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 0.15s;
+    width: 100%;
+  }
+  .input-field:focus { border-color: var(--color-primary); }
+
+  .table-row {
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.1s;
+  }
+  .table-row:hover { background-color: var(--color-bg); }
+  .table-row:last-child { border-bottom: none; }
+}
